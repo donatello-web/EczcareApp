@@ -3,18 +3,92 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="manifest" href="manifest.json">
-  <title>Simple PWA</title>
+  <title>ECZCARE - Your Smarter Skin Companion</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Welcome to My PWA</h1>
-  <p>This is a simple Progressive Web App example.</p>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <img src="image/user-3296.png" alt="User Icon">
+      <div class="header-icons">
+        <div class="bell">
+          <img src="image/notification-bell-13083.png" alt="Bell Icon">
+          <div class="notification-badge">1</div>
+        </div>
+        <img src="image/settings-5666.png" alt="Settings Icon">
+      </div>
+    </div>
+
+    <!-- Title -->
+    <div class="title">ECZCARE</div>
+    <div class="subtitle">Your Smarter Skin Companion</div>
+
+    <!-- Weather Section -->
+    <div class="weather-card" id="weather">
+      Loading Weather...
+    </div>
+
+    <!-- Sections -->
+    <div class="section">
+      <div class="itchlevel">
+        <strong>Itch Level</strong>
+        <img src="image/SatisfactionScale.png" alt="Scale Icon">
+        <p>High</p>
+      </div>
+      <div class="affectedarea">
+        <strong>Affected Area</strong>
+        <img src="image/—Pngtree—human body cartoon skin structure_6570746.png" alt="Skin Icon">
+        <p>Face</p>
+      </div>
+    </div>
+
+    <!-- Care Plan and Map -->
+    <div class="section">
+      <div class="careplan">
+        <strong>Care Plan</strong>
+        <textarea placeholder="Enter your text here..."></textarea>
+      </div>
+      <div class="map">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3691.777126301622!2d114.144341171182!3d22.286430873920978!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3404007f14ff51c3%3A0x9c4bfcac161362ef!2z6KW_54ef55uk6LO96aas5pyD5YiG56eR6Ki655mC5omA!5e0!3m2!1szh-TW!2sjp!4v1744312523582!5m2!1szh-TW!2sjp" width="200" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </div>
+    
+
+    <!-- Buttons -->
+    <div class="bar">
+        <div class="icon">
+          <img src="image/medicine-3260.png" alt="Icon">
+        </div>
+        <a href="#" class="button">Medication & treatment</a>
+    </div>
+    <div class="bar">
+        <div class="icon">
+          <img src="image/surgeon-293.png" alt="Icon">
+        </div>
+        <a href="#" class="button">Doctor appointment</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
   <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(reg => console.log('Service Worker registered', reg))
-        .catch(err => console.log('Service Worker registration failed', err));
-    }
+    // Weather API (OpenWeatherMap)
+    const apiKey = 'f2fe8da75b6a6a676bbe04149fcf79aa';
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=Hong%20Kong&units=metric&appid=${apiKey}`)
+      .then(response => response.json())
+      .then(data => {
+        const weatherCard = document.getElementById('weather');
+        weatherCard.innerHTML = `
+          <strong>${data.name}</strong>: ${data.main.temp}°C<br>
+          Max: ${data.main.temp_max}°C Min: ${data.main.temp_min}°C<br>
+          <small>${data.weather[0].description}</small>
+        `;
+      })
+      .catch(error => {
+        console.error('Error fetching weather data:', error);
+        const weatherCard = document.getElementById('weather');
+        weatherCard.innerHTML = `Failed to load weather data.`;
+      });
   </script>
 </body>
 </html>

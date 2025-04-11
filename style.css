@@ -1,0 +1,205 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #375884;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .container {
+    width: 100%;
+    max-width: 360px;
+    background: #f9f6f1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 15px;
+  }
+
+  .header img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .header-icons {
+    display: flex;
+    align-items: center;
+  }
+
+  .bell {
+    position: relative;
+    margin-right: 10px;
+  }
+
+  .notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: red;
+    color: white;
+    border-radius: 50%;
+    width: 12px;
+    height: 12px;
+    font-size: 10px;
+    text-align: center;
+    line-height: 12px;
+  }
+
+  .title {
+    text-align: center;
+    padding: 10px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #ffbe00;
+  }
+
+  .subtitle {
+    text-align: center;
+    font-size: 18px;
+    color: #7e67d1;
+    margin-bottom: 10px;
+  }
+
+  .weather-card {
+    padding: 15px;
+    background: #e3f2fd;
+    border-radius: 10px;
+    margin: 10px;
+    text-align: center;
+  }
+
+  .section {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+  }
+
+  .section div {
+    flex: 1;
+    margin: 5px;
+    border: #375884 2px solid;
+    border-radius: 30px;
+    text-align: center;
+  }
+
+.section p {
+    margin: 0;
+    padding: 0;
+}
+
+.section img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+  }
+
+  .itchlevel{
+    padding: 10px;
+    background: #c9e4ff;
+    cursor: pointer;
+  }
+
+  .itchlevel:hover p {
+    font-weight: bold;
+}
+
+  .affectedarea{
+    background: #ecf1dd;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .affectedarea:hover p {
+    font-weight: bold;
+}
+
+  .careplan {
+    padding: 10px;
+    background: #e3dcfe;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  .careplan textarea {
+    margin-top: 10px;
+    width: 80%;
+    height: 60%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: none;
+    font-size: 14px;
+    font-family: Arial, sans-serif;
+  }
+  .careplan textarea:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+  }
+
+  .map {
+    height: 200px;
+    padding: 0;
+    background: #f5f5f5;
+    border-radius: 30px;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+  }
+
+  .bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 40px);
+    margin: 10px auto;
+    padding: 10px;
+    text-align: center;
+    background: #fffcf5;
+    color: #375884;
+    border: #375884 2px solid;
+    border-radius: 50px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .bar:hover {
+    background: #fff4e0;
+  }
+
+  .bar:hover .button {
+    font-weight: bold;
+  }
+
+  .bar .icon {
+    display: flex;
+    align-items: center;
+  }
+
+  .bar img {
+    width: 24px;
+    height: 24px;
+    margin-right: 5px;
+  }
+
+  .bar .button {
+    font-size: 16px;
+    font-weight: normal;
+    color: #375884;
+    text-decoration: none;
+  }
